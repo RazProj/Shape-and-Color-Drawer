@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ColorPicker?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller" spacing="10">
+   <!-- HBox where all buttons -->
+   <HBox spacing="10">
+      <ComboBox fx:id="shapeSelector" promptText="Shape"/>
+      <ColorPicker fx:id="colorSelector" promptText="Main"/>
+      <ComboBox fx:id="fillSelector" promptText="Type"/>
+      <Button text="Clear" onAction="#clearShapes" />  <!-- Button to clear all shapes -->
+      <Button text="Undo" onAction="#undoLastShape" />  <!-- Button to undo the last shape drawn -->
+   </HBox>
+   <!-- Pane where shapes will be drawn -->
+   <Pane fx:id="shapePane" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: black; -fx-border-width: 2;"
+         onMousePressed="#handleMousePressed" onMouseDragged="#handleMouseDragged"
+         onMouseReleased="#handleMouseReleased" />
+</VBox>
